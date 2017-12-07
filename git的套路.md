@@ -12,7 +12,22 @@
 `sudo xcode-select --install`
 等待安装完成之后就可以
 
+## git别名
 
+```
+
+vi ~/.gitconfig
+
+git config --list
+
+git config --global alias.st status
+git config --global alias.co checkout
+git config --global alias.ci commit
+git config --global alias.br branch
+git config --global alias.unstage 'reset HEAD'
+git config --global alias.last 'log -1'
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+```
 ## 基本回退操作
 * 撤销上次提交 
 `git reset --hard '指定的记录'`
