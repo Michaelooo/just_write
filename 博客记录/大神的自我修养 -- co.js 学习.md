@@ -1,10 +1,15 @@
 # **大神的自我修养 co.js 的学习**
 
-具体的介绍就不多说了。co@4.0支持promise，现在co()会返回一个promise。
+
+最近在项目过程中涉及大量异步流程处理，其中有使用各种流程控制库，大家用的最多的 `async`，号称promise性能超原生的 `bluebird`，还有tj大神的`co.js`等。可以说是相当多了，于是空暇期间来整理一下promise的学习。
+
+今天来看的就是TJ大神的非常精炼的 co.js 。
+
+具体的介绍就不多说了。要注意的一点就是，co@4.0之前返回的是一个`trunk`函数，现在co@4.0支持promise，现在co()会返回一个promise。
 ![](http://ww1.sinaimg.cn/large/86c7c947gy1fm8c112bnwj20g205aglz.jpg)
 ## **先看用法**
 
-## **yield支持**
+### **yield支持**
 co最方便的操作也就是yield的支持，现在支持yield的对象有：
 
 * promises
