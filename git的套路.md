@@ -41,6 +41,12 @@ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Crese
 git commit -m ':apple: i have a apple'
 ```
 
+## git 上传文件忽略大小写
+
+```
+git config core.ignorecase false
+```
+
 ### 表情列表如下：
 
 
