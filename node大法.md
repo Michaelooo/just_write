@@ -1,5 +1,7 @@
 # node大坑
 
+## node使用profile监控应用性能
+
 
 ## node启动服务一直报 ENFILE 错误
 [![enfile报错](https://t1.picb.cc/uploads/2017/12/04/prBau.png)](https://www.picb.cc/image/prXma)
