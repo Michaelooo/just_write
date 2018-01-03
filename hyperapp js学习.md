@@ -99,3 +99,19 @@ export function h(name, props) {
 
 app 方法则是项目的入口，整个构建的操作其实在这里执行。在app函数里又定义了许多常用的工具方法，比如 createElement（创建元素），getKey（获取元素结点的key），removeElement（移除元素）等等。又很多，这里不在一一分析，重点方法只有两个 init 方法和 patch方法。
 
+#### **init()**
+
+#### **patch()**
+
+
+### **源码**
+
+```
+
+```
+
+## **其他类似的**
+
+其实类似的实现还有 [preact](https://github.com/developit/preact) ，不过 preact 大了一丢丢，但是在知名度和可靠性上肯定是 preact
+遥遥领先的，本文只是用来学习，真正项目使用的话还是要慎重考虑的，优先考虑 react 和 preact 这些。
+
