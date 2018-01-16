@@ -1,8 +1,8 @@
 const gulp = require('gulp');
-const markdown = require('gulp-markdown');
 const del = require('del');
-const breakdance = require('gulp-breakdance');
 const hammerdown = require('gulp-hammerdown');
+// const breakdance = require('gulp-breakdance');
+// const markdown = require('gulp-markdown');
 
 // 1. 执行 sh initTree.sh 生成目录文件.html
 
@@ -18,12 +18,10 @@ gulp.task('html:=>md', () =>
 	.pipe(gulp.dest('./'))
 );
 
+// 删除Readme.html文件
+gulp.task('clean:readme.html', ['html:=>md'], () =>
+	del('./README.html')
+);
 
-// 将md转换为html
-// gulp.task('Readme', () =>
-// 	gulp.src('*.md')
-// 		.pipe(markdown())
-// 		.pipe(gulp.dest('dist'))
-// );
-
-gulp.task('default', [ 'clean:readme', 'html:=>md' ]);
+// 'clean:readme.html'
+gulp.task('default', [ 'clean:readme', 'html:=>md', 'clean:readme.html' ]);
