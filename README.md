@@ -1,10 +1,10 @@
 # 主要是个人日常的学习笔记，持续更新...
 
-[https://github.com/Michaelooo/just_write/blob/master][0]  
+[https://github.com/Michaelooo/just_write/blob/master][$0]  
 
-	├── [dist][1]  
+	├── [dist][$1]  
 
-	│   ├── [Mac移植.md][2]  
+	│   ├── [Mac移植.md][$2]  
 
 	│   ├── [http协议.md][3]  
 
