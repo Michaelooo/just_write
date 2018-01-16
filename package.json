@@ -1,0 +1,24 @@
+{
+  "name": "just_study",
+  "version": "0.0.1",
+  "description": "study notes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Michaelooo/just_write.git"
+  },
+  "author": "Michael Cheng <422201870@qq.com> (http://www.chengpengfei.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Michaelooo/just_write/issues"
+  },
+  "homepage": "https://github.com/Michaelooo/just_write#readme",
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-markdown": "^2.0.1"
+  }
+}
