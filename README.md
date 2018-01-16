@@ -1,10 +1,10 @@
 # 主要是个人日常的学习笔记，持续更新...
 
-[https://github.com/Michaelooo/just_write/blob/master][$0]  
+[https://github.com/Michaelooo/just_write/blob/master][0]  
 
-	├── [dist][$1]  
+	├── [dist][1]  
 
-	│   ├── [Mac移植.md][$2]  
+	│   ├── [Mac移植.md][2]  
 
 	│   ├── [http协议.md][3]  
 
@@ -74,16 +74,18 @@
 
 	├── [start.sh][36]  
 
-	├── [gulpfile.js][37]  
+	├── [README.md][37]  
 
-	└── [README.html][38]  
+	├── [gulpfile.js][38]  
+
+	└── [README.html][39]  
   
   
 
 
 
 
-1 directory, 37 files
+1 directory, 38 files
 	  
   
 
@@ -138,5 +140,6 @@
 [34]: https://github.com/Michaelooo/just_write/blob/master/package.json
 [35]: https://github.com/Michaelooo/just_write/blob/master/yarn.lock
 [36]: https://github.com/Michaelooo/just_write/blob/master/start.sh
-[37]: https://github.com/Michaelooo/just_write/blob/master/gulpfile.js
-[38]: https://github.com/Michaelooo/just_write/blob/master/README.html
+[37]: https://github.com/Michaelooo/just_write/blob/master/README.md
+[38]: https://github.com/Michaelooo/just_write/blob/master/gulpfile.js
+[39]: https://github.com/Michaelooo/just_write/blob/master/README.html
