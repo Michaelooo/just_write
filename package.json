@@ -19,6 +19,10 @@
   "devDependencies": {
     "del": "^3.0.0",
     "gulp": "^3.9.1",
+    "gulp-breakdance": "^1.0.1",
     "gulp-markdown": "^2.0.1"
+  },
+  "dependencies": {
+    "gulp-hammerdown": "^1.0.1"
   }
 }
