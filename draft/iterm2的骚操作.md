@@ -14,10 +14,10 @@
 ## 命令时间轴
 * `cmd + option + b` 打开时间轴
 
-## 行的快速操作
+## 关于行的快速操作
 
 * `cmd + R` 清空当前窗口，等同于 clear
-* `ctrl + D` 删除当前行
+* `ctrl + W` 删除当前行
 * 选中即复制，鼠标 **中键** 即粘贴
 
 ## 管理窗口布局
@@ -35,7 +35,7 @@ export PATH=/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin:$P
 source ~/.bash_profile
 code . #当前目录就被打开了。
 ```
-但是尝试了，上面可能会有些问题，每次重启打开就不可用。下面的方法可用
+但是尝试了，上面可能会有些问题，每次重启打开就不可用（可能是目录问题）。下面的方法可用
 
 在vscode 中快捷键 `shift + command + p` 输入 code ,选择安装code 命令。重启ok
 
