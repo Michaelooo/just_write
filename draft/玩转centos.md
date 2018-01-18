@@ -1,10 +1,9 @@
 # 玩转centos
 
-## 不常用命令
 
 常用的都记住在脑袋里，不常用的来烂笔头了。
 
-#### 查看硬件配置
+## 查看硬件配置
 
 * **查看cpu信息：** `more /proc/cpuinfo `
 * **查看内存：** `free -m`
@@ -18,7 +17,7 @@ scp 文件名用户名@计算机IP或者计算机名称:远程路径
 
 本地192.168.1.8客户端
   
-`scp /root/install.* root@192.168.1.12:/usr/local/src`
+`scp /root/install.* root@192.168.1.8:/usr/local/src`
 
 添加 -r 表示传输文件夹
 
