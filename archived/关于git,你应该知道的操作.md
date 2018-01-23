@@ -13,7 +13,7 @@
 
 个人在用第二个，sourcetree 日常使用可以说是hin方便了。当然，不想额外下软件的还可以使用 vscode 内置的 git 管理工具，同样的也是棒棒的。
 
-### v**scode 的git插件**
+### **vscode 的git插件**
 
 当然我也在使用 vscode ，除了 vscode 自带的 git 支持，还可以安装以下的插件来更好的使用git：
 
