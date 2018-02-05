@@ -20,7 +20,7 @@
 
 * 脚手架 （ scaffold ）
 * 指令（ directive ）
-* 通道 （ pipe ）
+* 管道 （ pipe ）
 * 路由 （ router ）
 * 父子组件通信 （ @input & @output ）
 * 模块 ( model )
@@ -119,7 +119,47 @@ export class CheckDirective {
 属性型指令 — 改变元素、组件或其它指令的外观和行为的指令，专注于内部属性，ngClass 这种。两种都可以自定义。
 
 
-### **通道 （ pipe ）** 
+### **管道 （ pipe ）** 
+
+如果习惯了 bash 命令的童鞋，一定对 管道 很熟悉， 你可能经常会见到 `ls xxx | grep xxx ` 这种的写法，其实 ng 中的 管道 和这个其实是一个意思，写法都是一样的，通过 "|" 来分割，不过 ng 的明显要弱一些，ng 中管道的常见用法都是用来格式化钱币、数值精度、日期格式化这些操作。
+
+**内置管道**
+
+ng 内置了一些管道，比如DatePipe、UpperCasePipe、LowerCasePipe、CurrencyPipe和PercentPipe。 它们全都可以直接用在任何模板中。
+
+常见的[内置管道](https://angular.cn/api?type=pipe)。
+![](http://ww1.sinaimg.cn/large/86c7c947gy1fo5d5hqq4fj21ic0hstar.jpg)
+
+
+**自定义管道**
+
+当内置的管道不能满足需求的时候，往往我们需要自定义自己的管道。我们可以使用 `ng g pipe my-new-pipe` 来生成自定义管道，如下是一个简单的 money 格式化的例子,对属于任意的数值，进行金额的精度控制，当然底层其实还是使用了内置的 DecimalPipe 。
+
+```
+import { Pipe } from '@angular/core';
+import { DecimalPipe } from '@angular/common';
+
+@Pipe({
+  name: 'money'
+})
+export class MoneyPipe {
+
+  constructor(protected decimalPipe: DecimalPipe) {
+
+  }
+
+  public transform(value: any, digits?: string): string | null {
+    value = parseFloat(value) || 0;
+    return this.decimalPipe.transform(value, digits);
+
+  }
+
+}
+
+```
+
+在需要格式化金额的地方，比如我们要保留两位小数，我们可以这么用，`{{ 10.2222 | money:'1.2-2'}}`，具体第二个精度的使用方法可以[参考](https://angular.cn/api/common/DecimalPipe)。
+
 
 ### **路由 （ router ）** 
 
@@ -211,7 +251,7 @@ export class LoginRouteGuard implements CanActivate {
 
 **父组件向子组件传值**
 
-太简单，不提了。
+父组件使用 `[data]='{}'` 向子组件接收值，子组件通过 `@input() data` 来接收。
 
 **子组件向父组件传值**
 
@@ -231,11 +271,36 @@ export class LoginRouteGuard implements CanActivate {
 
 ### **模块 ( model )** 
 
+其实模块这个东西现在一点都不陌生，主流的编程框架都使用了模块化的编程方式。官方的文档是这么介绍的：
+> Angular 模块是带有 @NgModule 装饰器函数的类。 @NgModule接收一个元数据对象，该对象告诉 Angular 如何编译和运行模块代码。 它标记出该模块拥有的组件、指令和管道， 并把它们的一部分公开出去，以便外部组件使用它们。 它可以向应用的依赖注入器中添加服务提供商。
+> 
+
+我们理解起来就是，**一个 Angular模块 = 接收元数据对象（metadata）+ 暴露部分便于外部组件访问。** 如果不清楚什么是 **元数据** 的，可以看下官方的[介绍](https://angular.cn/guide/metadata)。
+
 ### **服务 ( service )** 
+
+在后端编程中经常会用到 服务 ( service ), 我个人的理解是，服务就是可高度抽象且与业务逻辑耦合低的一系列操作。比如所有应用场景下的登录都需要一个公用的验证码，那么生成验证码的这个功能就可以抽象成为一个服务，服务不是必须的，但是适当写服务会让代码耦合度降低，是一种好的编程习惯。
+
+截止到目前，我用的 ng 中的服务一般是用作某一个模块的请求封装，或者是日期的一些特殊操作，就像是一个工厂方法库一样。
 
 ### **Rxjs ( Oberverable )** 
 
 关于异步请求，ng2 自带的 http 模块返回的就是一个 Oberverable ，所以在项目中引入 Rx.js 自然无可厚非。官方评价为 promise 的超集，使用起来的确和 promise 很像，应该说是更加强大。但是正因为强大，导致要记的方法确实不少，直接戳一个[中文api](http://cn.rx.js.org/)。
 
 ### **依赖注入 （ injectable ）** 
+
+依赖注入其实之前也接触过一些， 依赖注入的目的在我看来有两个，一个是降低程序间的耦合性和复杂度，一个是减少复杂对象实例化带来的扩展问题。
+
+关于依赖注入，这里有两篇不错的可以用来理解的文章（都是基于 java ）：
+
+* [spring 中的控制反转和依赖注入](https://www.cnblogs.com/xxzhuang/p/5948902.html)
+* [依赖注入和控制反转](http://blog.csdn.net/bestone0213/article/details/47424255)
+
+当然 ng 中的依赖出入也差不多，而且实现方式也更优雅，东西挺多，可以看[官方文档](https://angular.cn/guide/dependency-injection#%E9%85%8D%E7%BD%AE%E6%B3%A8%E5%85%A5%E5%99%A8)。
+
+## **总结**
+
+其实也是刚接触 angularv2 不久，自己也只是结合过去的知识对自己认为的 ng2 做了一个总结，认识还是比较粗鄙的，行文也比较乱。
+
+写博客总结的这个习惯，希望自己可以继续坚持下去，即使只有自己看，hahah……
 
