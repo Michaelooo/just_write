@@ -1,7 +1,12 @@
 # node大坑
 
-## node使用profile监控应用性能
+## node 线上性能监控，内存泄漏……
 
+* [alinode: baba~~](https://alinode.aliyun.com/)
+* [easy-monitor: 轻量级实时 Node.js 内核性能监控分析工具(待验证)](https://github.com/hyj1991/easy-monitor)
+
+## node使用profile监控应用性能
+[如何使用Node Profiler]https://github.com/ali-sdk/node-profiler/wiki/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Node-Profiler()
 
 ## node启动服务一直报 ENFILE 错误
 [![enfile报错](https://t1.picb.cc/uploads/2017/12/04/prBau.png)](https://www.picb.cc/image/prXma)
