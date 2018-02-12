@@ -4,9 +4,12 @@
 
 * [alinode: baba~~](https://alinode.aliyun.com/)
 * [easy-monitor: 轻量级实时 Node.js 内核性能监控分析工具(待验证)](https://github.com/hyj1991/easy-monitor)
+* [load-test 压测工具](https://github.com/alexfernandez/loadtest)
 
 ## node使用profile监控应用性能
-[如何使用Node Profiler]https://github.com/ali-sdk/node-profiler/wiki/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Node-Profiler()
+
+* [如何使用Node Profile](https://github.com/ali-sdk/node-profiler/wiki/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Node-Profiler)
+* [node profile](https://nodejs.org/uk/docs/guides/simple-profiling/)
 
 ## node启动服务一直报 ENFILE 错误
 [![enfile报错](https://t1.picb.cc/uploads/2017/12/04/prBau.png)](https://www.picb.cc/image/prXma)
