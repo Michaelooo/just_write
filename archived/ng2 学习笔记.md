@@ -202,7 +202,7 @@ export const routes: Routes = [
 在 notice-list 设置路由跳转：
 
 ```
-this.router.navigate(['/notice-content']，id);
+this.router.navigate(['/notice-content'，id]);
 this.router.navigate(['/notice-content']，params);
 ```
 
