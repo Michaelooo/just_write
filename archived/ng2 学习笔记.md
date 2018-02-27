@@ -1,9 +1,9 @@
 # **ng2 体验**
 
 > 当然，现在 angular 最新的版本已经出到 5.0 了，现在才来说 ng2 有点老套了，只是最近忽然的从 react 的项目组转到了做 angular v2 (ng2) 的项目组，同时对谷歌和微软的"孩子"也比较感兴趣，所以还是有必要好好学习一下的。
-> 
+>
 > 上手了一阵子，大概摸清了 ng2 的套路，其实在此之前，对于习惯了 React、 Vue 开发模式的我来说，对于 ng2 是有一定的误解的。过去的我一直以为 ng2 只是简单的视图框架，就是一个简单的模板系统，现在看来我是错了，较之于 React、 Vue 复杂的项目构建来说， ng2 才是真正的框架啊，如果你有一定的后端基础，你一定能很快的理解 ng2 知识体系， 而且你也会明白 ng2 作为一个框架对于开发效率的提升。
- 
+
 ## **关于学习网站**
 
 学习 ng2 最好的就是看官网了，当然所有的语言都是一样的，以下是几个可能需要经常去逛的网站。
@@ -36,20 +36,19 @@
 
 ng2 (angular) 使用的脚手架是官方提供的 angular-cli ，常用的几个操作如下：
 
-
-生成对象		| 命令			| 注意事项
-:-------- 	|:--------  	|:-------- 
-project		|ng new PROJECT-NAME |生成新项目
-debug			|ng serve --host 0.0.0.0 --port 4201 |启动本地服务
-Component		|ng g component my-new-component |生成 component
-Directive		|ng g directive my-new-directive |生成[自定义指令](https://angular.cn/guide/attribute-directives)
-Pipe			|ng g pipe my-new-pipe |生成[自定义管道](https://angular.cn/guide/pipes#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%AE%A1%E9%81%93)
-Service		|ng g service my-new-service |生成服务
-Class			|ng g class my-new-class |生成类，几乎不用
-Guard			|ng g guard my-new-guard |生成自定义路由向导，通用拦截等
-Interface		|ng g interface my-new-interface |生成接口
-Enum			|ng g enum my-new-enum | 生成自定义枚举文件
-Module			|ng g module my-module | 生成自定义module
+| 生成对象  | 命令                                | 注意事项                                                                                       |
+| :-------- | :---------------------------------- | :--------------------------------------------------------------------------------------------- |
+| project   | ng new PROJECT-NAME                 | 生成新项目                                                                                     |
+| debug     | ng serve --host 0.0.0.0 --port 4201 | 启动本地服务                                                                                   |
+| Component | ng g component my-new-component     | 生成 component                                                                                 |
+| Directive | ng g directive my-new-directive     | 生成[自定义指令](https://angular.cn/guide/attribute-directives)                                |
+| Pipe      | ng g pipe my-new-pipe               | 生成[自定义管道](https://angular.cn/guide/pipes#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%AE%A1%E9%81%93) |
+| Service   | ng g service my-new-service         | 生成服务                                                                                       |
+| Class     | ng g class my-new-class             | 生成类，几乎不用                                                                               |
+| Guard     | ng g guard my-new-guard             | 生成自定义路由向导，通用拦截等                                                                 |
+| Interface | ng g interface my-new-interface     | 生成接口                                                                                       |
+| Enum      | ng g enum my-new-enum               | 生成自定义枚举文件                                                                             |
+| Module    | ng g module my-module               | 生成自定义 module                                                                              |
 
 以上常用的几个命令参数同样的路径模式，意思就是你使用 `ng new ./test` 这样的格式也是可以的。
 
@@ -74,7 +73,6 @@ Module			|ng g module my-module | 生成自定义module
   <app-confused-hero *ngSwitchCase="'app-confused'" [hero]="hero"></app-confused-hero>
   <app-unknown-hero  *ngSwitchDefault           [hero]="hero"></app-unknown-hero>
 </div>
-
 ```
 
 **ng-template ng-container**
@@ -86,14 +84,13 @@ Module			|ng g module my-module | 生成自定义module
 
 当然，ng-template 另外的一个用途是 [作为动态组件加载器](https://angular.cn/guide/dynamic-component-loader)。
 
-
 **自定义指令**
 
-用上面的脚手架生成最方便，也不容易出错。如下，生成一个 名为check 的指令：
+用上面的脚手架生成最方便，也不容易出错。如下，生成一个 名为 check 的指令：
 
 ```
 <!-- 执行 ng g directive -->
-ng g directive 
+ng g directive
 
 <!-- 自定义生成示例,并已在 当前 model 声明 -->
 import { Directive } from '@angular/core';
@@ -109,27 +106,22 @@ export class CheckDirective {
 
 <!--在html模板中使用-->
 <input check="xxx" >
-
 ```
-
 
 **问题： 官文文档会看到一种 属性型指令 和 结构性指令 ，两者有什么区别？**
 
-答： 结构型指令 — 通过添加和移除 DOM 元素改变 DOM 布局的指令，专注于布局，ngIf 这种。
-属性型指令 — 改变元素、组件或其它指令的外观和行为的指令，专注于内部属性，ngClass 这种。两种都可以自定义。
+答： 结构型指令 — 通过添加和移除 DOM 元素改变 DOM 布局的指令，专注于布局，ngIf 这种。属性型指令 — 改变元素、组件或其它指令的外观和行为的指令，专注于内部属性，ngClass 这种。两种都可以自定义。
 
+### **管道 （ pipe ）**
 
-### **管道 （ pipe ）** 
-
-如果习惯了 bash 命令的童鞋，一定对 管道 很熟悉， 你可能经常会见到 `ls xxx | grep xxx ` 这种的写法，其实 ng 中的 管道 和这个其实是一个意思，写法都是一样的，通过 "|" 来分割，不过 ng 的明显要弱一些，ng 中管道的常见用法都是用来格式化钱币、数值精度、日期格式化这些操作。
+如果习惯了 bash 命令的童鞋，一定对 管道 很熟悉， 你可能经常会见到 `ls xxx | grep xxx` 这种的写法，其实 ng 中的 管道 和这个其实是一个意思，写法都是一样的，通过 "|" 来分割，不过 ng 的明显要弱一些，ng 中管道的常见用法都是用来格式化钱币、数值精度、日期格式化这些操作。
 
 **内置管道**
 
-ng 内置了一些管道，比如DatePipe、UpperCasePipe、LowerCasePipe、CurrencyPipe和PercentPipe。 它们全都可以直接用在任何模板中。
+ng 内置了一些管道，比如 DatePipe、UpperCasePipe、LowerCasePipe、CurrencyPipe 和 PercentPipe。 它们全都可以直接用在任何模板中。
 
 常见的[内置管道](https://angular.cn/api?type=pipe)。
 ![](http://ww1.sinaimg.cn/large/86c7c947gy1fo5d5hqq4fj21ic0hstar.jpg)
-
 
 **自定义管道**
 
@@ -155,13 +147,11 @@ export class MoneyPipe {
   }
 
 }
-
 ```
 
 在需要格式化金额的地方，比如我们要保留两位小数，我们可以这么用，`{{ 10.2222 | money:'1.2-2'}}`，具体第二个精度的使用方法可以[参考](https://angular.cn/api/common/DecimalPipe)。
 
-
-### **路由 （ router ）** 
+### **路由 （ router ）**
 
 **路由重定向**
 
@@ -215,6 +205,7 @@ export const routes: Routes = [
 this.router.navigate(['/notice-content']，id);
 this.router.navigate(['/notice-content']，params);
 ```
+
 读取路由参数
 
 ```
@@ -247,7 +238,7 @@ export class LoginRouteGuard implements CanActivate {
 }
 ```
 
-### **父子组件通信 （ @input & @output ）** 
+### **父子组件通信 （ @input & @output ）**
 
 **父组件向子组件传值**
 
@@ -259,35 +250,33 @@ export class LoginRouteGuard implements CanActivate {
 
 在子组件中，使用
 
-	@Output() outData = new EventEmitter<string>();
-	……
-	this.outData.emit(data);
-	
+    @Output() outData = new EventEmitter<string>();
+    ……
+    this.outData.emit(data);
+
 在父组件中获取,定义一个 getData 事件
 
-	<a (outData)='getData()'></a>
-	
+    <a (outData)='getData()'></a>
 
-
-### **模块 ( model )** 
+### **模块 ( model )**
 
 其实模块这个东西现在一点都不陌生，主流的编程框架都使用了模块化的编程方式。官方的文档是这么介绍的：
-> Angular 模块是带有 @NgModule 装饰器函数的类。 @NgModule接收一个元数据对象，该对象告诉 Angular 如何编译和运行模块代码。 它标记出该模块拥有的组件、指令和管道， 并把它们的一部分公开出去，以便外部组件使用它们。 它可以向应用的依赖注入器中添加服务提供商。
-> 
 
-我们理解起来就是，**一个 Angular模块 = 接收元数据对象（metadata）+ 暴露部分便于外部组件访问。** 如果不清楚什么是 **元数据** 的，可以看下官方的[介绍](https://angular.cn/guide/metadata)。
+> Angular 模块是带有 @NgModule 装饰器函数的类。 @NgModule 接收一个元数据对象，该对象告诉 Angular 如何编译和运行模块代码。 它标记出该模块拥有的组件、指令和管道， 并把它们的一部分公开出去，以便外部组件使用它们。 它可以向应用的依赖注入器中添加服务提供商。
 
-### **服务 ( service )** 
+我们理解起来就是，**一个 Angular 模块 = 接收元数据对象（metadata）+ 暴露部分便于外部组件访问。** 如果不清楚什么是 **元数据** 的，可以看下官方的[介绍](https://angular.cn/guide/metadata)。
+
+### **服务 ( service )**
 
 在后端编程中经常会用到 服务 ( service ), 我个人的理解是，服务就是可高度抽象且与业务逻辑耦合低的一系列操作。比如所有应用场景下的登录都需要一个公用的验证码，那么生成验证码的这个功能就可以抽象成为一个服务，服务不是必须的，但是适当写服务会让代码耦合度降低，是一种好的编程习惯。
 
 截止到目前，我用的 ng 中的服务一般是用作某一个模块的请求封装，或者是日期的一些特殊操作，就像是一个工厂方法库一样。
 
-### **Rxjs ( Oberverable )** 
+### **Rxjs ( Oberverable )**
 
-关于异步请求，ng2 自带的 http 模块返回的就是一个 Oberverable ，所以在项目中引入 Rx.js 自然无可厚非。官方评价为 promise 的超集，使用起来的确和 promise 很像，应该说是更加强大。但是正因为强大，导致要记的方法确实不少，直接戳一个[中文api](http://cn.rx.js.org/)。
+关于异步请求，ng2 自带的 http 模块返回的就是一个 Oberverable ，所以在项目中引入 Rx.js 自然无可厚非。官方评价为 promise 的超集，使用起来的确和 promise 很像，应该说是更加强大。但是正因为强大，导致要记的方法确实不少，直接戳一个[中文 api](http://cn.rx.js.org/)。
 
-### **依赖注入 （ injectable ）** 
+### **依赖注入 （ injectable ）**
 
 依赖注入其实之前也接触过一些， 依赖注入的目的在我看来有两个，一个是降低程序间的耦合性和复杂度，一个是减少复杂对象实例化带来的扩展问题。
 
@@ -303,4 +292,3 @@ export class LoginRouteGuard implements CanActivate {
 其实也是刚接触 angularv2 不久，自己也只是结合过去的知识对自己认为的 ng2 做了一个总结，认识还是比较粗鄙的，行文也比较乱。
 
 写博客总结的这个习惯，希望自己可以继续坚持下去，即使只有自己看，hahah……
-

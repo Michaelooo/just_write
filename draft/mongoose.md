@@ -1,9 +1,9 @@
 # mongodb 学习笔记
 
-## MongoDB的发展
+## MongoDB 的发展
 
-## MongoDB的基本语法
+## MongoDB 的基本语法
 
-## MongoShell的使用
+## MongoShell 的使用
 
-## node中使用MongoDB，mongoose的使用
+## node 中使用 MongoDB，mongoose 的使用

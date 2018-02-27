@@ -1,4 +1,4 @@
-# Linux搭建 Node.js 环境
+# Linux 搭建 Node.js 环境
 
 ## 安装 Node.js 环境
 
@@ -23,6 +23,7 @@ tar xvJf node-v6.10.3-linux-x64.tar.xz
 ```
 mv node-v6.10.3-linux-x64 /usr/local/node-v6
 ```
+
 配置 node 软链接到 /bin 目录
 
 ```
@@ -51,6 +52,7 @@ ln -s /usr/local/node-v6/bin/npm /bin/npm
 ```
 source /etc/profile
 ```
+
 ### 使用 npm
 
 通过 npm 安装进程管理模块 forever
