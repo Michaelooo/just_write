@@ -36,6 +36,13 @@ source ~/.bashrc
 或者 source ~/.zshrc
 ```
 
+当然我们为了简写可以直接这样写（以配置 homebrew 源为例子）
+
+```
+echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles' >> ~/.zshrc
+source ~/.zshrc
+```
+
 **重启失效了？**
 
 按照以上顺序再来一遍……
@@ -77,3 +84,11 @@ launchctl load -w /Library/LaunchAgents/com.adobe.AdobeCreativeCloud.plist
 日常使用了一阵子，发现确实棒棒的，但是有一个致命缺陷就是，假如你安装了 Adobe 的大型图像处理软件之类的，比如 PS、基于 Adobe air 的 Markman 等，你就会发现电脑会运行极其卡顿，发热极其严重。其原因就是缩放改了你屏幕的显示分辨率，分辨率越大，Adobe 需要渲染处理的东西就越多，有多少内存就用掉多少，显卡也撑不住，造成的结果就是 CPU、GPU 狂飙 90°c,电脑极其卡顿。
 
 当然，我也尝试过去修改 PS 的可用内存、渲染质量之类的[（官方 PS 优化策略）](https://helpx.adobe.com/cn/photoshop/kb/optimize-photoshop-cc-performance.html)，调整之后略有改善，但是那种卡顿感还是非常强。最后无奈放弃，使用默认的分辨率 1440x900 ， 然后运行如飞。
+
+### Macbook 升级系统后安全箱隐私策略找不到**任何来源**
+
+执行 `sudo spctl --master-disable` 解决
+
+### Mac升级后，出现的 xcrun: error, 或者安装 homebrew 出错，大部分是因为 `/Library/Developer/CommandLineTools` 的原因，
+
+执行 `xcode-select --install` 解决
