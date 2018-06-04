@@ -89,6 +89,6 @@ launchctl load -w /Library/LaunchAgents/com.adobe.AdobeCreativeCloud.plist
 
 执行 `sudo spctl --master-disable` 解决
 
-### Mac升级后，出现的 xcrun: error, 或者安装 homebrew 出错，大部分是因为 `/Library/Developer/CommandLineTools` 的原因，
+### Mac升级后，出现的 xcrun: error, 或者安装 homebrew 出错，大部分是因为 **/Library/Developer/CommandLineTools** 的原因
 
 执行 `xcode-select --install` 解决
