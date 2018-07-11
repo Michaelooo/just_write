@@ -11,18 +11,23 @@
 .
 ├── README.md
 ├── archived
+│   ├── API Gateway 工具 kong.md
 │   ├── ES6黑科技实践--proxy,reflection.md
 │   ├── JS 参数验证： Joi 四问.md
 │   ├── Linux搭建 Node.js 环境.md
+│   ├── TCP三次握手与四次分手.md
 │   ├── Webpack 对比 Parcel.md
 │   ├── http协议总结.md
 │   ├── hyperapp js学习.md
+│   ├── iterm2 折腾笔记.md
 │   ├── js事件队列异步执行的一些总结.md
 │   ├── ng2 学习笔记.md
 │   ├── 搭建Git服务器.md
+│   ├── 玩转centos.md
 │   ├── 关于git,你应该知道的操作.md
 │   ├── 正则表达式.md
 │   ├── 一个简单的node爬虫踩坑之路.md
+│   ├── 进程、线程、CPU、程序.md
 │   ├── 一篇文章，从windows10成功移植macOS.md
 │   ├── 大神的自我修养 -- co.js 学习.md
 │   ├── 我生病的一次经历.md
@@ -31,32 +36,27 @@
 │   └── 当我有了我的新电脑，我该怎样去配置？.md
 ├── demo.md
 ├── draft
-│   ├── API Gateway 工具 kong.md
 │   ├── Mac下的一些命令.md
 │   ├── Nginx配置目录的问题.md
-│   ├── TCP三次握手与四次分手.md
 │   ├── go 环境配置.md
 │   ├── go 语言踩坑记录.md
-│   ├── iterm2 折腾笔记.md
 │   ├── iterm2的骚操作.md
-│   ├── mongoose.md
 │   ├── node大法.md
 │   ├── vscode调试.md
 │   ├── webpack奇淫巧技.md
 │   ├── 梯子.md
-│   ├── 玩转centos.md
 │   ├── 单元测试.md
 │   ├── 调试笔记.md
-│   ├── 一些常用的node库.md
 │   ├── 内网穿透工具 ngrok 和 localtunnel.md
 │   ├── 我是怎么禁用Android的开机广告的.md
-│   ├── 进程、线程、CPU、程序.md
+│   ├── 记一次狗血的修 bug 经历.md
 │   ├── 不踩坑必知命令.md
 │   └── 好用的软件记录.md
 ├── gulpfile.js
 ├── new_start.sh
 ├── package.json
 ├── start.sh
+├── sync.sh
 └── yarn.lock
 
 2 directories, 47 files
