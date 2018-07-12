@@ -55,5 +55,5 @@ mkdir -p $GOPATH/src/golang.org/x \
 
 * godep: [golang 包依赖管理 godep 使用](https://www.jianshu.com/p/db59b10c8c51)
 * govendor: [go依赖管理-govendor](https://studygolang.com/articles/9785)
-
+* glide: [glide git](https://github.com/Masterminds/glide)
 
