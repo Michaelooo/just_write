@@ -159,7 +159,7 @@ kong-dashboard docker镜像的版本并不是最新的，最新的已经支持�
 
 1. 本地打包： `docker save -o xxxx.docker image(镜像名称)` ， xxxx.docker 是输出的离线文件，
 2. 传输至远程主机： 使用 rsync 传输至远程主机： `rsync -cavzP ./xxxx.docker root@host:/path`，
-3. 装再: 进入到 xxxx.docker 路径并执行： `docker build -i xxxx.docker`
+3. 装再: 进入到 xxxx.docker 路径并执行： `docker save -i xxxx.docker`
 
 之后本机就成功装在最新版本的 kong-dashboard 镜像了。 
 
