@@ -1,4 +1,15 @@
-# go 环境配置问题相关
+# go 入门踩坑及环境配置问题相关
+
+
+## 学习网站
+
+* [**Go 入门指南**](https://www.kancloud.cn/kancloud/the-way-to-go/72675)
+* [**Go web 编程**](https://www.kancloud.cn/kancloud/web-application-with-golang/44105)
+* [**官网**](https://golang.org/doc/)
+* [**深入解析 Go**](https://tiancaiamao.gitbooks.io/go-internals/content/zh/04.0.html)
+* [**Go 仓库大全**](https://gowalker.org/search?q=gorepos)
+* [**Go 标准库指南（中文）**](http://cngolib.com/)
+* [**awesome go**](https://github.com/avelino/awesome-go)
 
 ## 1.安装
 
@@ -57,6 +68,16 @@ go get github.com/derekparker/delve/cmd/dlv
 }
 ``` 
 
+如果启动后报下面的错误：
+
+```
+lldb-server needs to be installed in $PATH
+```
+
+可以采用下面的方法解决：
+
+执行 `xcode-select --install` 解决，[原因未知](https://github.com/derekparker/delve/issues/986)。
+
 
 ### **配置开发语法提示**
 
@@ -90,7 +111,7 @@ mkdir -p $GOPATH/src/golang.org/x \
 
 上述命令可能会遇到文件夹已存在的问题，可以直接跳过第一步文件夹创建的操作就可以。
 
-## 使用一些包管理工具来管理第三方包
+## 3.使用一些包管理工具来管理第三方包
 
 因为 go 官方没有提供自己的包管理机制，所以包的管理是个坑。市面上各家提供的包管理都是各玩各的，但也有大家用的多的，关于 go 比较常用的包管理工具，有以下几个推荐的:
 

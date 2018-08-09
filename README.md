@@ -38,8 +38,7 @@
 ├── draft
 │   ├── Mac下的一些命令.md
 │   ├── Nginx配置目录的问题.md
-│   ├── go 环境配置.md
-│   ├── go 语言踩坑记录.md
+│   ├── go 入门踩坑及环境配置问题相关.md
 │   ├── iterm2的骚操作.md
 │   ├── node大法.md
 │   ├── vscode调试.md
@@ -60,4 +59,4 @@
 ├── sync.sh
 └── yarn.lock
 
-2 directories, 48 files
+2 directories, 47 files
