@@ -38,20 +38,20 @@
 ├── draft
 │   ├── Mac下的一些命令.md
 │   ├── Nginx配置目录的问题.md
-│   ├── go 入门踩坑及环境配置问题相关.md
+│   ├── git开发规范.md
+│   ├── go入门踩坑及环境配置问题相关.md
 │   ├── iterm2的骚操作.md
 │   ├── node大法.md
 │   ├── vscode调试.md
 │   ├── webpack奇淫巧技.md
-│   ├── 梯子.md
+│   ├── web调试方案.md
 │   ├── 如何用node去搭建一个项目发布系统.md
-│   ├── 单元测试.md
-│   ├── 调试笔记.md
+│   ├── 知识体系.md
 │   ├── 内网穿透工具 ngrok 和 localtunnel.md
 │   ├── 我是怎么禁用Android的开机广告的.md
 │   ├── 不踩坑必知命令.md
-│   ├── 好用的软件记录.md
-│   └── 记一次狗血的修bug经历.md
+│   ├── 记一次狗血的修bug经历.md
+│   └── 前端后端单元测试调研.md
 ├── gulpfile.js
 ├── new_start.sh
 ├── package.json

@@ -65,7 +65,7 @@ example: git commit -m "[feat] 新功能"
 
 以上总结自： [阮一峰： Commit message 和 Change log 编写指南](http://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html)]
 
-如果你很皮，想加个开源库类似 comment 的表情，你可以执行：
+如果你很皮，想加个开源库那样 comment 的表情，你可以执行：
 
 ```shell
 git commit -m ':apple: i have a apple'
