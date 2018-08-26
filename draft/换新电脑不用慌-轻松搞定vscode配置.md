@@ -52,7 +52,7 @@
 
    
 
-   **生成的 gistID 一定要记住，最好可以保存下来，如果实在记不住，可以去个人的 gist 列表里开启双目扫描查找。**例如这是 [我的 gist 列表](https://gist.github.com/Michaelooo) 。
+   **生成的 gistID 一定要记住，最好可以保存下来，如果实在记不住，可以去个人的 gist 列表里开启双目扫描查找**。例如这是 [我的 gist 列表](https://gist.github.com/Michaelooo) 。
 
 4. **同步/下载 配置**
 
