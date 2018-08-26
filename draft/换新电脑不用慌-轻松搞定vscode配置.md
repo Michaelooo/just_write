@@ -38,11 +38,19 @@
 
    你可以调出 vscode 的快捷命令窗口 `cmd + shift + P`，键入 sync 来进行 **上传设置** 操作。**需要注意与 git 的命令区分**。
 
+   
+
    ![](http://ww1.sinaimg.cn/large/86c7c947gy1fumzabi2bej20f708tdir.jpg)
+
+   
 
    如果你是第一次使用，那么会提示你输入上个步骤生成的 token ，粘贴回车，第一次上传设置会自动新增一个 gist 的配置，生成成功之后会有成功的提示:
 
+   
+
    ![](http://shanalikhan.github.io/img/upload2.png)
+
+   
 
    **生成的 gistID 一定要记住，最好可以保存下来，如果实在记不住，可以去个人的 gist 列表里开启双目扫描查找。**例如这是 [我的 gist 列表](https://gist.github.com/Michaelooo) 。
 
