@@ -58,6 +58,26 @@
 
    以上的步骤做完，就代表你的 Setting Sync 可以正常使用了，通常，你只需要 调出快捷命令窗口，然后输入 sync 就可以查看并使用 Setting Sync 的同步或者下载配置了（使用快捷键会更方便）。
 
+   即使你更换了新电脑，只要你记得第三个步骤里保存的 token，同步也是非常方便的（不记得也没关系，重新生成一个就好）。你可以通过 `cmd + shift + P`  --> `sync 高级选项` --> `编辑本地扩展设置` ，将你的 token 粘贴在配置文件里，然后再执行同步/下载的配置即可，具体如下：
+
+   ```json
+   {
+     "ignoreUploadFiles": ["projects.json", "projects_cache_vscode.json", "projects_cache_git.json", "projects_cache_svn.json", "gpm_projects.json", "gpm-recentItems.json"],
+     "ignoreUploadFolders": ["workspaceStorage"],
+     "ignoreExtensions": [],
+     "replaceCodeSettings": {},
+     "gistDescription": "Visual Studio Code Settings Sync Gist",
+     "version": 300,
+     "token": "12e72f28b69348aa1d47367cf1c7dfe5d8853f53",
+     "downloadPublicGist": true,
+     "supportedFileExtensions": ["json", "code-snippets"],
+     "openTokenLink": true
+   }
+   
+   ```
+
+   
+
 5. **新建用户配置的gist**
 
    因为 Setting Sync 是针对插件的同步，所以你还可以将你的用户配置文件放到 gist 上，等到更换新电脑的时候取回即可。
