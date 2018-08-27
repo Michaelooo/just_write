@@ -68,7 +68,7 @@
      "replaceCodeSettings": {},
      "gistDescription": "Visual Studio Code Settings Sync Gist",
      "version": 300,
-     "token": "12e72f28b69348aa1d47367cf1c7dfe5d8853f53",
+     "token": "put token in there",
      "downloadPublicGist": true,
      "supportedFileExtensions": ["json", "code-snippets"],
      "openTokenLink": true
