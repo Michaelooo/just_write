@@ -44,6 +44,7 @@
 │   ├── Nginx配置目录的问题.md
 │   ├── go入门踩坑及环境配置问题相关.md
 │   ├── iterm2的骚操作.md
+│   ├── nestjs 学习过程中的笔记.md
 │   ├── node大法.md
 │   ├── vscode调试.md
 │   ├── webpack奇淫巧技.md
@@ -53,6 +54,7 @@
 │   ├── 我是怎么禁用Android的开机广告的.md
 │   ├── 换新电脑不用慌-轻松搞定vscode配置.md
 │   ├── 不踩坑必知命令.md
+│   ├── 如何将博客升级http2.md
 │   └── 前端后端单元测试调研.md
 ├── gulpfile.js
 ├── new_start.sh
@@ -61,4 +63,4 @@
 ├── sync.sh
 └── yarn.lock
 
-2 directories, 49 files
+2 directories, 51 files
