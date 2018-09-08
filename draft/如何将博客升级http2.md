@@ -18,12 +18,12 @@
 
 ```nginx
 server {
-    listen 443 ssl;
-  	listen [::]:443 ssl ipv6only=on;
-  	server_name www.chengpengfei.com;
-  	ssl_certificate /etc/letsencrypt/live/www.chengpengfei.com/fullchain.pem;
-  	ssl_certificate_key /etc/letsencrypt/live/www.chengpengfei.com/privkey.pem;
-  	ssl_trusted_certificate /etc/letsencrypt/live/www.chengpengfei.com/chain.pem;
+	listen 443 ssl;	
+	listen [::]:443 ssl ipv6only=on;
+	server_name www.chengpengfei.com;
+	ssl_certificate /etc/letsencrypt/live/www.chengpengfei.com/fullchain.pem;
+	ssl_certificate_key /etc/letsencrypt/live/www.chengpengfei.com/privkey.pem;
+	ssl_trusted_certificate /etc/letsencrypt/live/www.chengpengfei.com/chain.pem;
 }
 ```
 
@@ -61,9 +61,9 @@ nginx
 
 ```nginx
 server {
-    listen 443 http2 ssl;
-  	listen [::]:443 http2 ssl ipv6only=on;
-  	……
+	listen 443 http2 ssl;
+	listen [::]:443 http2 ssl ipv6only=on;
+	……
 }
 ```
 
