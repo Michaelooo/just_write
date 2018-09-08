@@ -63,7 +63,7 @@ nginx
 server {
     listen 443 http2 ssl;
   	listen [::]:443 http2 ssl ipv6only=on;
-  ……
+  	……
 }
 ```
 
