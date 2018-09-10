@@ -9,7 +9,6 @@
 
 ```
 .
-├── README.html
 ├── README.md
 ├── archived
 │   ├── API Gateway 工具 kong.md
@@ -63,4 +62,4 @@
 ├── sync.sh
 └── yarn.lock
 
-2 directories, 51 files
+2 directories, 50 files
