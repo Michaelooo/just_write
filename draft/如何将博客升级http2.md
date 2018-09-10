@@ -83,7 +83,7 @@ server {
 
 ### 1. **提示 Problems with Python virtual environment ？**
 
-官方给出的解释是 [低内存的机器会出现类似的问题](https://certbot.eff.org/docs/install.html#id7) ，但是按照官方给出的 **创建一个临时 swap 文件**的方案并没有解决。后来查阅资料确认是国内 Python mirror 的问题，因为我用的是阿里云提供的 vps ，但是阿里的Python mirror 同步不及时，所以造成安装失败。只需要修改 `/root/.pip/pip.conf` 的配置即可，可以改为其他可用的 mirror (推荐清华大学的 pypi 镜像 — https://pypi.tuna.tsinghua.edu.cn/simple) ，也可以直接注释掉使用原版的。
+官方给出的解释是 [低内存的机器会出现类似的问题](https://certbot.eff.org/docs/install.html#id7) ，但是按照官方给出的 **创建一个临时 swap 文件**的方案并没有解决。后来查阅资料确认是国内 Python mirror 的问题，因为我用的是阿里云提供的 ecs ，但是阿里的Python mirror 同步不及时，所以造成安装失败。只需要修改 `/root/.pip/pip.conf` 的配置即可，可以改为其他可用的 mirror (推荐清华大学的 pypi 镜像 — https://pypi.tuna.tsinghua.edu.cn/simple) ，也可以直接注释掉使用原版的。
 
 ### **2.生成证书时，使用了 docker 部署 nginx， 但是本机并未安装 nginx ?**
 
