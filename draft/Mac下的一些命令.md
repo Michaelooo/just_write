@@ -92,3 +92,61 @@ launchctl load -w /Library/LaunchAgents/com.adobe.AdobeCreativeCloud.plist
 ### Mac升级后，出现的 xcrun: error, 或者安装 homebrew 出错，大部分是因为 **/Library/Developer/CommandLineTools** 的原因
 
 执行 `xcode-select --install` 解决
+
+### 执行某些命令出现 Fail to watch directory[ too many open files
+
+* 参考： https://gist.github.com/tombigel/d503800a282fcadbee14b537735d202c
+* http://wudaijun.com/2017/02/max-osx-ulimit/
+
+查看现在的限制大小
+
+```
+launchctl limit maxfiles 
+```
+
+新建一个配置文件
+
+```
+sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist
+```
+
+配置文件的内容
+
+```
+<?xml version="1.0" encoding="UTF-8"?>  
+ <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"  
+         "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+ <plist version="1.0">  
+   <dict>
+     <key>Label</key>
+     <string>limit.maxfiles</string>
+     <key>ProgramArguments</key>
+     <array>
+       <string>launchctl</string>
+       <string>limit</string>
+       <string>maxfiles</string>
+       <string>64000</string>
+       <string>524288</string>
+     </array>
+     <key>RunAtLoad</key>
+     <true/>
+     <key>ServiceIPC</key>
+     <false/>
+   </dict>
+ </plist>
+```
+
+修改文件权限
+
+```
+sudo chown root:wheel /Library/LaunchDaemons/limit.maxfiles.plist
+sudo chmod 644 /Library/LaunchDaemons/limit.maxfiles.plist
+```
+
+加载文件
+
+```
+sudo launchctl load -w /Library/LaunchDaemons/limit.maxfiles.plist
+```
+
+配置完成之后必须重启才可以生效  
