@@ -42,10 +42,9 @@ https://angular.cn/guide/dependency-injection
 
 
 ## 单元测试
-nest 使用的是 jest 的方案：
-eggjs mocha的方案：
 
-
+* nest 使用的是 jest 的方案：
+* eggjs mocha的方案：
 
 ## Koa 实现 微服务，koa-compose 
 
