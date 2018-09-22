@@ -43,13 +43,16 @@
 │   ├── Nginx配置目录的问题.md
 │   ├── go入门踩坑及环境配置问题相关.md
 │   ├── iterm2的骚操作.md
+│   ├── mongo踩坑.md
 │   ├── nestjs 学习过程中的笔记.md
 │   ├── node大法.md
 │   ├── vscode调试.md
 │   ├── webpack奇淫巧技.md
 │   ├── web调试方案.md
 │   ├── 知识体系.md
+│   ├── 面试总结.md
 │   ├── 内网穿透工具 ngrok 和 localtunnel.md
+│   ├── 代码质量控制-codereview.md
 │   ├── 我是怎么禁用Android的开机广告的.md
 │   ├── 换新电脑不用慌-轻松搞定vscode配置.md
 │   ├── 不踩坑必知命令.md
@@ -62,4 +65,4 @@
 ├── sync.sh
 └── yarn.lock
 
-2 directories, 50 files
+2 directories, 53 files
