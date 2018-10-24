@@ -66,7 +66,7 @@ go get github.com/derekparker/delve/cmd/dlv
     }
   ]
 }
-``` 
+```
 
 如果启动后报下面的错误：
 
@@ -118,7 +118,7 @@ mkdir -p $GOPATH/src/golang.org/x \
 * godep : [golang 包依赖管理 godep 使用](https://www.jianshu.com/p/db59b10c8c51)
 * govendor : [go 依赖管理-govendor](https://studygolang.com/articles/9785)
 * **glide** : [glide 包依赖管理](https://github.com/Masterminds/glide)
- 
+
 目前项目中正在使用 glide， 使用 glide 管理包的话，会生成一个 venndor 的目录，可以理解为一个跟随项目的局部 gopath， 这样子在引入第三方包的时候，实际的读取顺序就是： 局部 vendor -> 全局 gopath 。
 
 另外，在使用第三方包的时候，有些第三方包会托管在 google 的服务上，因为墙的原因，我们没法方便的拿下来，甚至你搭了梯子还是很蛋疼。所以我们只能自己配置镜像源了，因为我们用的是 glide ，所以就拿 glide 的来做例子。
@@ -127,6 +127,26 @@ mkdir -p $GOPATH/src/golang.org/x \
 
 ```
 glide mirror set https://golang.org/x/sys https://github.com/golang/sys
-``` 
+```
+
+## 4. 使用 glide 安装包常见的错误 
+
+Error scanning golang.org/x/sys/unix:  [https://golang.org/x/sys/unix](https://www.jianshu.com/p/de8e23acd6a4)
+
+```shell
+glide mirror set https://golang.org/x/sys/unix https://github.com/golang/sys
+glide mirror set https://golang.org/x/crypto https://github.com/golang/crypto
+glide mirror set https://golang.org/x/crypto/acme/autocert 
+https://github.com/golang/crypto
+glide mirror set https://golang.org/x/net https://github.com/golang/net
+glide mirror set https://golang.org/x/sync https://github.com/golang/sync
+glide mirror set https://golang.org/x/tools https://github.com/golang/tools
+glide mirror set https://golang.org/x/grpc https://github.com/golang/grpc
+glide mirror set https://golang.org/x/time https://github.com/golang/time
+```
+
+
+
+Error looking for google.golang.org/appengine/cloudsql: Cannot detect VCS: [https://blog.csdn.net/cjj198561/article/details/80631392](https://blog.csdn.net/cjj198561/article/details/80631392)
 
 ## 后续待补……
