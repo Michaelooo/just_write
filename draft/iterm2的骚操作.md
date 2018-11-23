@@ -1,27 +1,33 @@
 # iterm2 的一些骚操作
 
-一些关于 iterm2 必须记住的操作，快起来自然就骚了
+一些关于 iterm2 必须记住的操作，快起来自然就骚了……
 
-## 存取一行 为 session
+## 快捷键相关：
+
+### 存取一行 为 session
 
 * `cmd + shift + m` 指定位置设置 session 点
 * `cmd + shift + k` 快速定位到指定位置
 * `cmd + shift + 上、下` 如果存在多个定位点，可以通过此命令切换
 
-## 自动填充提示
+### 自动填充提示
 
 * `cmd + ;` 输入提示
 * `cmd + shift + h` 提示最近的操作记录
 
-## 命令时间轴
+### 命令时间轴
 
 * `cmd + option + b` 打开时间轴
 
-## 关于行的快速操作
+### 关于行的快速操作
 
 * `cmd + R` 清空当前窗口，等同于 clear
 * `ctrl + W` 删除当前行
 * 选中即复制，鼠标 **中键** 即粘贴
+
+
+
+
 
 ## 管理窗口布局
 
@@ -68,6 +74,21 @@ git node z // 空格隔开，可以去插件列表找适合自己的，默认只
 **生效配置文件**
 
 ```
+source ~/.zshrc
+```
+
+**常用的插件：**
+
+自动填充插件：
+
+```
+// clone 
+git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+
+// 修改zsh配置文件，加入插件列表
+plugins=(zsh-autosuggestions)
+
+// 使其生效
 source ~/.zshrc
 ```
 
