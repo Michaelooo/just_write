@@ -37,7 +37,6 @@
 │   ├── 一个小例子引发的思考.md
 │   ├── 没有后端基础，怎么入门学习Nginx？.md
 │   └── 当我有了我的新电脑，我该怎样去配置？.md
-├── demo.md
 ├── draft
 │   ├── Mac下的一些命令.md
 │   ├── Nginx配置目录的问题.md
@@ -62,13 +61,15 @@
 │   ├── 不踩坑必知命令.md
 │   ├── 如何将博客升级http2.md
 │   └── 前端后端单元测试调研.md
-├── gulpfile.js
-├── new_start.sh
 ├── package.json
-├── start.sh
-├── sync.sh
-└── yarn.lock
+└── scripts
+    ├── demo.md
+    ├── gulpfile.js
+    ├── new_start.sh
+    ├── start.sh
+    └── sync.sh
 
-2 directories, 57 files
+3 directories, 56 files
+
 ```
 
