@@ -8,6 +8,9 @@
 ![](http://ww1.sinaimg.cn/large/86c7c947gy1fsqy439zlyj20760760t6.jpg)
 
 ```
+
+```
+
 .
 ├── README.md
 ├── archived
@@ -42,6 +45,7 @@
 │   ├── Nginx配置目录的问题.md
 │   ├── go入门踩坑及环境配置问题相关.md
 │   ├── iterm2的骚操作.md
+│   ├── js 实现网页截图并模拟文件下载.md
 │   ├── mongo踩坑.md
 │   ├── nestjs 学习过程中的笔记.md
 │   ├── node 多线程.md
@@ -69,7 +73,4 @@
     ├── start.sh
     └── sync.sh
 
-3 directories, 56 files
-
-```
-
+3 directories, 57 files
