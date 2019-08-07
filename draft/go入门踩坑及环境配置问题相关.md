@@ -144,6 +144,7 @@ mkdir -p $GOPATH/src/golang.org/x \
 * godep : [golang 包依赖管理 godep 使用](https://www.jianshu.com/p/db59b10c8c51)
 * govendor : [go 依赖管理-govendor](https://studygolang.com/articles/9785)
 * **glide** : [glide 包依赖管理](https://github.com/Masterminds/glide)
+* go mod: [go mod 的使用方式](https://juejin.im/post/5c8e503a6fb9a070d878184a#heading-2)
 
 目前项目中正在使用 glide， 使用 glide 管理包的话，会生成一个 venndor 的目录，可以理解为一个跟随项目的局部 gopath， 这样子在引入第三方包的时候，实际的读取顺序就是： 局部 vendor -> 全局 gopath 。
 
