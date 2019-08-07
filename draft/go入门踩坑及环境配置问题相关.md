@@ -1,6 +1,5 @@
 # go 入门踩坑及环境配置问题相关
 
-
 ## 学习网站
 
 * [**Go 入门指南**](https://www.kancloud.cn/kancloud/the-way-to-go/72675)
@@ -15,7 +14,7 @@
 
 直接去官网下载 [go的包](https://golang.org/dl/)，下载后解压安装。
 
-### 配置 gopath 
+### 配置 gopath
 
 gopath 可以简单理解为你的工作目录，可以自己定义位置。
 
@@ -23,6 +22,7 @@ gopath 可以简单理解为你的工作目录，可以自己定义位置。
 echo 'export GOPATH=$HOME/go
 PATH=$PATH:$HOME/.local/bin:$HOME/bin:$GOPATH/bin' >> ~/.zshrc
 ```
+
 使配置生效
 
 ```
@@ -34,6 +34,18 @@ source ~/.zshrc
 一般目录是下面的这个样子就是对的，`GOPATH="/Users/xxx/go"`，xxx 是当前用户名称。
 
 ## 2.配置 vscode 开发环境
+
+### 配置 go get 代理
+
+一个通用的代理网站： [https://goproxy.io/zh/](https://goproxy.io/zh/)
+
+```powershell
+如果没有使用 zsh 替代 bash ，自己建立 ~/.bashrc 文件替代 ~/.zshrc
+echo 'export GO111MODULE=on
+export GOPROXY=https://goproxy.io' >> ~/.zshrc
+
+source ~/.zshrc
+```
 
 ### **配置 debug 环境**
 
@@ -78,7 +90,6 @@ lldb-server needs to be installed in $PATH
 
 执行 `xcode-select --install` 解决，[原因未知](https://github.com/derekparker/delve/issues/986)。
 
-
 ### **配置开发语法提示**
 
 随便建一个 `.go` 的文件用 vscode 打开，会自动提示安装 go 的相关插件，但是一般会有一些插件安装失败，一般都是下面的几个：
@@ -97,6 +108,21 @@ Installing github.com/golang/lint/golint FAILED
 
 可以参考这个[修改办法: 让你成功安装vscode中go的相关插件](https://cloud.tencent.com/developer/article/1013066) 修改。
 
+```powershell
+快捷安装方法：
+
+cd $GOPATH && \
+mkdir -p ./src/github.com/golang && \
+cd ./src/github.com/golang && \
+git clone https://github.com/golang/tools.git tools && \
+cd $GOPATH && \
+mkdir -p ./src/golang.org/x/tools && \
+cp -R ./src/github.com/golang/tools/* ./src/golang.org/x/tools/
+
+```
+
+
+
 ### **注意(如果没遇到就忽略)**
 
 但是在最近的测试过程中，发现 golint 依然会报安装失败，原因是 [https://github.com/golang/tools.git](https://github.com/golang/tools.git) 这个仓库里不包含这个 lint 的工具了，所以我们需要单独的安装这个工具包。
@@ -106,7 +132,7 @@ Installing github.com/golang/lint/golint FAILED
 ```
 mkdir -p $GOPATH/src/golang.org/x \
   && git clone https://github.com/golang/lint.git $GOPATH/src/golang.org/x/lint \
-  && go get -u golang.org/x/lint/golint
+  && go install golang.org/x/lint/golint
 ```
 
 上述命令可能会遇到文件夹已存在的问题，可以直接跳过第一步文件夹创建的操作就可以。
@@ -129,7 +155,7 @@ mkdir -p $GOPATH/src/golang.org/x \
 glide mirror set https://golang.org/x/sys https://github.com/golang/sys
 ```
 
-## 4. 使用 glide 安装包常见的错误 
+## 4. 使用 glide 安装包常见的错误
 
 Error scanning golang.org/x/sys/unix:  [https://golang.org/x/sys/unix](https://www.jianshu.com/p/de8e23acd6a4)
 
@@ -145,8 +171,23 @@ glide mirror set https://golang.org/x/grpc https://github.com/golang/grpc
 glide mirror set https://golang.org/x/time https://github.com/golang/time
 ```
 
-
-
 Error looking for google.golang.org/appengine/cloudsql: Cannot detect VCS: [https://blog.csdn.net/cjj198561/article/details/80631392](https://blog.csdn.net/cjj198561/article/details/80631392)
+
+## 5. 更好用的开发工具 - goland
+
+一键搭建自己的 goland lincense server （参考：[https://mengniuge.com/creat-jet-server.html）](https://mengniuge.com/creat-jet-server.html%EF%BC%89)
+
+
+
+```powershell
+wget --no-check-certificate -O jetbrains.sh https://mengniuge.com/download/shell/jetbrains.sh && chmod +x jetbrains.sh && bash jetbrains.sh
+
+如果使用的是阿里云的服务，请确保添加了安全组规则，开放指定端口
+
+// 默认 lincese server address , 
+http://your-serevr-ip:1027 
+```
+
+
 
 ## 后续待补……
