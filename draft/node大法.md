@@ -89,7 +89,7 @@ sudo rm -rf /opt/local/lib/node_modules
 
 [node 和 yarn 缓存策略的异同](https://segmentfault.com/a/1190000009709213)
 
-> 在 npm@5 以前，每个缓存的模块在 `~/.npm` 文件夹中以模块名的形式直接存储，例如 koa 模块存储在 `~/.npm/koa` 文件夹中。而 npm@5 版本开始，数据存储在 `~/.npm/_cacache` 中，并且不是以模块名直接存放。
+> 在 npm@5 以前，每个缓存的模块在 `~/.npm` 文件夹中以模块名的形式直接存储，例如 koa 模块存储在 `~/.npm/koa` 文件夹中。而 npm@5 版本开始，数据存储在 `~/.npm/_cacache` 中，并且不是以模块名直接存放。
 
 切换到较高版本的 node 时，有时候会遇到 npm 无法安装的错误，主要还是因为 n 管理 node 版本，npm @5 更新了自己的缓存策略， 所以一些模块会找不到，所以可以先清理cache，再重新切换版本即可。
 

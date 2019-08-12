@@ -12,18 +12,18 @@
 
 这个生成的过程会有一些小坑，我在下面的 **踩坑总结： 使用 cerbot-auto 生成 Let's Encrypt 证书遇到的问题** 有提及。生成之后，可以使用 `./certbot-auto certificates` 查看你生成的证书的位置。另外有一点需要注意的是，通过上面的这种方式生成的证书的有效期是 90 天，所以到时间了要记得自己去重新生成。
 
-### 配置 nginx 
+### 配置 nginx
 
 因为我使用的是 Nginx 服务器，所以只需要简单的配置就可以使用 https ， 配置的内容大致如下：
 
 ```nginx
 server {
-	listen 443 ssl;	
-	listen [::]:443 ssl ipv6only=on;
-	server_name www.chengpengfei.com;
-	ssl_certificate /etc/letsencrypt/live/www.chengpengfei.com/fullchain.pem;
-	ssl_certificate_key /etc/letsencrypt/live/www.chengpengfei.com/privkey.pem;
-	ssl_trusted_certificate /etc/letsencrypt/live/www.chengpengfei.com/chain.pem;
+    listen 443 ssl;    
+    listen [::]:443 ssl ipv6only=on;
+    server_name www.chengpengfei.com;
+    ssl_certificate /etc/letsencrypt/live/www.chengpengfei.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/www.chengpengfei.com/privkey.pem;
+    ssl_trusted_certificate /etc/letsencrypt/live/www.chengpengfei.com/chain.pem;
 }
 ```
 
@@ -53,17 +53,15 @@ nginx
 
 ![Imgur](https://i.imgur.com/DASIzJQ.jpg)
 
-
-
 ### 配置 http2
 
 配置 http2 的方式更加简单，直接在 Nginx 的配置里更改就可以了（我用的是最新版的 nginx ，所以是支持 http2 的，别用太老的版本都支持的）。
 
 ```nginx
 server {
-	listen 443 http2 ssl;
-	listen [::]:443 http2 ssl ipv6only=on;
-	……
+    listen 443 http2 ssl;
+    listen [::]:443 http2 ssl ipv6only=on;
+    ……
 }
 ```
 
@@ -77,8 +75,6 @@ server {
 
 ![](http://ww1.sinaimg.cn/large/86c7c947gy1fv27gvjv0pj22vo0b2djw.jpg)
 
-
-
 ## 踩坑总结： 使用 cerbot-auto 生成 Let's Encrypt 证书遇到的问题
 
 ### 1. **提示 Problems with Python virtual environment ？**
@@ -90,7 +86,5 @@ server {
 cerbot 给出了两种方案来生成证书，一种是 webroot ，这种也是普遍推荐的一种，因为不需要停止你的服务，只需要在 nginx 配置里做些更改即可，生成方式可以看[这里](https://certbot.eff.org/docs/using.html#id12)，但是因为我用的是 docker 部署，本机并没有安装 nginx ，所以这种方式对我来说并不适用。另一种是 standalone ，这种方式会在本机临时建立一个服务器，但是会默认占用你的 80 端口或者 443 端口，所以这种方式需要先解除掉 80 或者 443 端口的占用， 使用 docker 的话用这种方式就很方便，直接 `docker stop containerId` 停止掉容器即可，等到证书生成完成，重新启动即可。
 
 但这里有一个大坑是：**尽量不要去手动的 kill 掉 80 端口的 pid** ，因为关掉容易，但是不熟悉 Linux 的话，开启就会比较麻烦，我的 阿里云 ECS 是 centos 7 的版本，但是 centos 6 和 7开启端口的方式还是有很大的差异的。
-
-
 
 以上！

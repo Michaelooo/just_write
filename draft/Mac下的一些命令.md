@@ -151,8 +151,6 @@ sudo launchctl load -w /Library/LaunchDaemons/limit.maxfiles.plist
 
 配置完成之后必须重启才可以生效  
 
-
-
 ### Mac 对 ntfs 外接磁盘不可写的问题
 
 可以使用付费软件：Paragon NTFS for MAC

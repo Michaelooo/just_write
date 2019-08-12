@@ -38,7 +38,6 @@ export const downloadAsPng = (id, fileName) => {
   });
 
 };
-
 ```
 
 2. 新建一个隐藏的 a 元素，模拟点击事件下载
@@ -76,8 +75,6 @@ export const downloadAsBlob = (id, fileName) => {
 
 };
 ```
-
-
 
 ## 参考
 

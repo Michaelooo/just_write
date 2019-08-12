@@ -7,8 +7,11 @@
 首先有两个 可视化工具推荐 ：
 
 * [gitkraken](https://www.gitkraken.com/features)
+  
   一个新出的广受好评的 git 可视化工具。有付费。
+
 * [sourcetree](https://www.sourcetreeapp.com/)
+  
   一直在用，就是注册麻烦，需要翻墙。免费。
 
 个人在用第二个，sourcetree 日常使用可以说是 hin 方便了。当然，不想额外下软件的还可以使用 vscode 内置的 git 管理工具，同样的也是棒棒的。
@@ -18,13 +21,17 @@
 当然我也在使用 vscode ，除了 vscode 自带的 git 支持，还可以安装以下的插件来更好的使用 git：
 
 * **Git Lens** 官推的 git 插件，几乎该有的都有了，最强大的就是可以查看具体代码的具体变更,就像下面的这样：
+  
   ![](http://ww1.sinaimg.cn/large/86c7c947gy1fnqmw9ig2vj210u062jsa.jpg)
+  
   上一个让我感觉这么厉害的还是 visual studio 的内部集成的版本控制功能，但是 visual studio 实在是太大了。不过这个插件美中不足的就是查看历史实在是太丑了，所以有了下面的这个插件。
 * **git history** 没毛病，这个插件就是让你的 提交历史 可以很直观的展示出来。
 
 不过，无论怎么说，git 原生命令还是要了解的，对学习和理解 git 的工作机制会很有帮助，当然对提升逼格也有成效。so,下面的部分主要是针对于 git 命令行的一些快捷操作。
 
-### **Mac 下不可以使用的问题**
+## 一些常见的问题
+
+### 1. Mac 下不可以使用的问题
 
 `error: xcrun:error invalid actiive ... missing xcrun at ...`
 
@@ -35,6 +42,59 @@ sudo xcode-select --install
 ```
 
 等待安装完成之后就可以了。
+
+### 2. git clone 极其缓慢的问题
+
+如果你在 git clone 某个仓库的时候，不管是使用 https 或是 ssh 的方式，速度都极其的慢，基本保持在 10kb/s - 40kb/s。那么这个绝对是不正常的现象。
+
+以下解决办法都是参考知乎上的这个[回答](https://www.zhihu.com/question/27159393)，前提是你得有个代理。
+
+1. 使用代理
+   
+   最好使用 socks 代理， 或者更换成 http 代理，1086 是你开启的 sock 端口号。
+   
+   ```bash
+   git config --global http.proxy 'socks5://127.0.0.1:1086'
+   
+   git config --global https.proxy 'socks5://127.0.0.1:1086'
+   ```
+
+2. 修改 DNS 映射表
+   
+   使用 nslook 查询 github 的两个仓库的地址
+   
+   ```bash
+   nslookup github.com
+   
+   #output
+   Server:        10.0.2.3
+   Address:    10.0.2.3#53
+   
+   Non-authoritative answer:
+   Name:    github.com
+   Address: 13.229.188.59
+   
+   nslookup github.global.ssl.fastly.Net
+   
+   #ouput
+   Server:        114.114.114.114
+   Address:    114.114.114.114#53
+   
+   Non-authoritative answer:
+   Name:    github.global.ssl.fastly.Net
+   Address: 173.252.73.48
+   
+   # write in /etc/hosts
+   sudo vi /etc/host
+   github.com 13.229.188.59
+   github.global.ssl.fastly.Net 173.252.73.48
+   ```
+
+3. 文件大小限制修改
+   
+   ```bash
+   git config --global http.postBuffer 524288000
+   ```
 
 ## **git 命令行的一些骚操作**
 
@@ -70,16 +130,19 @@ source ~/.gitconfig
 如果你已经提交到暂存区了，你可以：
 
 * 撤销上次提交
+  
   `git reset --hard '指定的记录'`
 
 如果你想放弃本地修改，你可以：
 
 * 检出本地
+  
   `git checkout 'branch'`
 
 如果你想修改上一次的提交信息，你可以：
 
 * 修改最后的一次提交
+  
   `git commit --amend`
 
 如果你在排查问题的时候，你可以
@@ -89,6 +152,8 @@ source ~/.gitconfig
 ### **（踩坑）git 上传文件忽略大小写**
 
 好的约定其实比技术本身更重要，所以尽可能统一规范大小写，从而避免修改默认的配置。
+
+曾经遇到的大坑： [https://github.com/Michaelooo/test_git](https://github.com/Michaelooo/test_git)
 
 ```
 git config core.ignorecase false
@@ -122,38 +187,38 @@ git commit -m ':apple: i have a apple'
 
 **表情列表如下：**
 
-| emoji                                   | emoji 代码                   | commit 说明           |
-| :-------------------------------------- | :--------------------------- | :-------------------- |
-| :art: (调色板)                          | `:art:`                      | 改进代码结构/代码格式 |
-| :zap: (闪电)<br>:racehorse: (赛马)      | `:zap:`<br>`:racehorse:`     | 提升性能              |
-| :fire: (火焰)                           | `:fire:`                     | 移除代码或文件        |
-| :bug: (bug)                             | `:bug:`                      | 修复 bug              |
-| :ambulance: (急救车)                    | `:ambulance:`                | 重要补丁              |
-| :sparkles: (火花)                       | `:sparkles:`                 | 引入新功能            |
-| :memo: (备忘录)                         | `:memo:`                     | 撰写文档              |
-| :rocket: (火箭)                         | `:rocket:`                   | 部署功能              |
-| :lipstick: (口红)                       | `:lipstick:`                 | 更新 UI 和样式文件    |
-| :tada: (庆祝)                           | `:tada:`                     | 初次提交              |
-| :white_check_mark: (白色复选框)         | `:white_check_mark:`         | 增加测试              |
-| :lock: (锁)                             | `:lock:`                     | 修复安全问题          |
-| :apple: (苹果)                          | `:apple:`                    | 修复 macOS 下的问题   |
-| :penguin: (企鹅)                        | `:penguin:`                  | 修复 Linux 下的问题   |
-| :checkered_flag: (旗帜)                 | `:checked_flag:`             | 修复 Windows 下的问题 |
-| :bookmark: (书签)                       | `:bookmark:`                 | 发行/版本标签         |
-| :rotating_light: (警车灯)               | `:rotating_light:`           | 移除 linter 警告      |
-| :construction: (施工)                   | `:construction:`             | 工作进行中            |
-| :green_heart: (绿心)                    | `:green_heart:`              | 修复 CI 构建问题      |
-| :arrow_down: (下降箭头)                 | `:arrow_down:`               | 降级依赖              |
-| :arrow_up: (上升箭头)                   | `:arrow_up:`                 | 升级依赖              |
-| :construction_worker: (工人)            | `:construction_worker:`      | 添加 CI 构建系统      |
-| :chart_with_upwards_trend: (上升趋势图) | `:chart_with_upwards_trend:` | 添加分析或跟踪代码    |
-| :hammer: (锤子)                         | `:hammer:`                   | 重大重构              |
-| :heavy_minus_sign: (减号)               | `:heavy_minus_sign:`         | 减少一个依赖          |
-| :whale: (鲸鱼)                          | `:whale:`                    | Docker 相关工作       |
-| :heavy_plus_sign: (加号)                | `:heavy_plus_sign:`          | 增加一个依赖          |
-| :wrench: (扳手)                         | `:wrench:`                   | 修改配置文件          |
-| :globe_with_meridians: (地球)           | `:globe_with_meridians:`     | 国际化与本地化        |
-| :pencil2: (铅笔)                        | `:pencil2:`                  | 修复 typo             |
+| emoji                              | emoji 代码                     | commit 说明       |
+|:---------------------------------- |:---------------------------- |:--------------- |
+| :art: (调色板)                        | `:art:`                      | 改进代码结构/代码格式     |
+| :zap: (闪电)<br>:racehorse: (赛马)     | `:zap:`<br>`:racehorse:`     | 提升性能            |
+| :fire: (火焰)                        | `:fire:`                     | 移除代码或文件         |
+| :bug: (bug)                        | `:bug:`                      | 修复 bug          |
+| :ambulance: (急救车)                  | `:ambulance:`                | 重要补丁            |
+| :sparkles: (火花)                    | `:sparkles:`                 | 引入新功能           |
+| :memo: (备忘录)                       | `:memo:`                     | 撰写文档            |
+| :rocket: (火箭)                      | `:rocket:`                   | 部署功能            |
+| :lipstick: (口红)                    | `:lipstick:`                 | 更新 UI 和样式文件     |
+| :tada: (庆祝)                        | `:tada:`                     | 初次提交            |
+| :white_check_mark: (白色复选框)         | `:white_check_mark:`         | 增加测试            |
+| :lock: (锁)                         | `:lock:`                     | 修复安全问题          |
+| :apple: (苹果)                       | `:apple:`                    | 修复 macOS 下的问题   |
+| :penguin: (企鹅)                     | `:penguin:`                  | 修复 Linux 下的问题   |
+| :checkered_flag: (旗帜)              | `:checked_flag:`             | 修复 Windows 下的问题 |
+| :bookmark: (书签)                    | `:bookmark:`                 | 发行/版本标签         |
+| :rotating_light: (警车灯)             | `:rotating_light:`           | 移除 linter 警告    |
+| :construction: (施工)                | `:construction:`             | 工作进行中           |
+| :green_heart: (绿心)                 | `:green_heart:`              | 修复 CI 构建问题      |
+| :arrow_down: (下降箭头)                | `:arrow_down:`               | 降级依赖            |
+| :arrow_up: (上升箭头)                  | `:arrow_up:`                 | 升级依赖            |
+| :construction_worker: (工人)         | `:construction_worker:`      | 添加 CI 构建系统      |
+| :chart_with_upwards_trend: (上升趋势图) | `:chart_with_upwards_trend:` | 添加分析或跟踪代码       |
+| :hammer: (锤子)                      | `:hammer:`                   | 重大重构            |
+| :heavy_minus_sign: (减号)            | `:heavy_minus_sign:`         | 减少一个依赖          |
+| :whale: (鲸鱼)                       | `:whale:`                    | Docker 相关工作     |
+| :heavy_plus_sign: (加号)             | `:heavy_plus_sign:`          | 增加一个依赖          |
+| :wrench: (扳手)                      | `:wrench:`                   | 修改配置文件          |
+| :globe_with_meridians: (地球)        | `:globe_with_meridians:`     | 国际化与本地化         |
+| :pencil2: (铅笔)                     | `:pencil2:`                  | 修复 typo         |
 
 ## **写在最后**
 
