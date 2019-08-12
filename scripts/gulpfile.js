@@ -3,7 +3,6 @@ const del = require('del');
 const hammerdown = require('gulp-hammerdown');
 const breakdance = require('gulp-breakdance');
 // const markdown = require('gulp-markdown');
-
 // 1. 执行 sh initTree.sh 生成目录文件.html
 
 // 删除readme
