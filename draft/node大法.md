@@ -16,21 +16,22 @@
 [![enfile报错](https://t1.picb.cc/uploads/2017/12/04/prBau.png)](https://www.picb.cc/image/prXma)
 原因是 mac 的打开文件最大限制设置的太小。执行以下命令解决：从 10240 变成 65536
 
-```
-$ echo kern.maxfiles=65536 | sudo tee -a /etc/sysctl.conf
-$ echo kern.maxfilesperproc=65536 | sudo tee -a /etc/sysctl.conf
-$ sudo sysctl -w kern.maxfiles=65536
-$ sudo sysctl -w kern.maxfilesperproc=65536
-$ ulimit -n 65536
+```bash
+echo kern.maxfiles=65536 | sudo tee -a /etc/sysctl.conf
+echo kern.maxfilesperproc=65536 | sudo tee -a /etc/sysctl.conf
+sudo sysctl -w kern.maxfiles=65536
+sudo sysctl -w kern.maxfilesperproc=65536
+ulimit -n 65536
 ```
 
 [![解决办法](https://t1.picb.cc/uploads/2017/12/04/prFDD.png)](https://www.picb.cc/image/prBau)
 
 ## 不要 homebrew 安装 node
 
-初始化的时候不要用 n 安装 node，好多问题：
+初始化的时候不要用 homebrew 或者 n 安装 node，好多问题：
 
 [![用homebrew安装报错](https://t1.picb.cc/uploads/2017/12/04/prx7i.png)](https://www.picb.cc/image/prRnv)
+
 解决办法就是老老实实下个安装包去安装
 
 ## node 切换版本出现的问题
@@ -41,34 +42,43 @@ $ ulimit -n 65536
 
 ### node 在 Mac 的删除方法
 
-* 在 node 官网上下载的安装包，用安装包安装的 node.应该可以用一下命令行卸载：
-
-在终端输入以下命令：
-
-```
-sudo rm -rf /usr/local/{bin/{node,npm},lib/node_modules/npm,lib/node,share/man/*/node.*}
-```
-
-      a. 删除/usr/local/lib中的所有node和node_modules
-      b. 删除/usr/local/lib中的所有node和node_modules的文件夹
-      c. 如果是从brew安装的, 运行brew uninstall node
-      d. 检查~/中所有的local, lib或者include文件夹, 删除里面所有node和node_modules
-      e. 在/usr/local/bin中, 删除所有node的可执行文件
-      f. 最后运行以下代码:(可能具体安装路径会有区别 ,find ~ -name "node"   可以找到所有
-      g.
-
-* 删除
-
-```
-sudo rm /usr/local/bin/npm
-sudo rm /usr/local/share/man/man1/node.1
-sudo rm /usr/local/lib/dtrace/node.d
-sudo rm -rf ~/.npm
-sudo rm -rf ~/.node-gyp
-sudo rm /opt/local/bin/node
-sudo rm /opt/local/include/node
-sudo rm -rf /opt/local/lib/node_modules
-```
+1. 在 node 官网上下载的安装包，用安装包安装的 node 的话，应该可以用一下命令行卸载：
+   
+   在终端输入以下命令：
+   
+   ```bash
+   sudo rm -rf /usr/local/{bin/{node,npm},lib/node_modules/npm,lib/node,share/man/*/node.*}
+   ```
+   
+   该命令操作的步骤就是：
+   
+   * 删除/usr/local/lib中的所有node和node_modules
+   
+   * 删除/usr/local/lib中的所有node和node_modules的文件夹
+   
+   * 如果是从brew安装的, 运行brew uninstall node
+   
+   * 检查~/中所有的local, lib或者include文件夹, 删除里面所有node和node_modules
+   
+   * 在/usr/local/bin中, 删除所有node的可执行文件
+   
+   * 最后运行以下代码:(可能具体安装路径会有区别 ,find ~ -name "node" 可以找到所有
+     
+     
+   2. 删除
+      
+      ```bash
+      sudo rm /usr/local/bin/npm
+      sudo rm /usr/local/share/man/man1/node.1
+      sudo rm /usr/local/lib/dtrace/node.d
+      sudo rm -rf ~/.npm
+      sudo rm -rf ~/.node-gyp
+      sudo rm /opt/local/bin/node
+      sudo rm /opt/local/include/node
+      sudo rm -rf /opt/local/lib/node_modules
+      ```
+      
+      
 
 ## 生成目录树结构
 
