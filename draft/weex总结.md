@@ -14,11 +14,6 @@ git clone https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git ~/.cocoap
 pod repo update
 ```
 
-
-
 **打包出现下面的报错 You should config `CodeSign` and `Profile` in the `ios.config.json**`
 
-
-
 基础踩坑： https://segmentfault.com/a/1190000010984857#articleHeader14
-

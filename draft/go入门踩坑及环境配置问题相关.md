@@ -173,7 +173,7 @@ Error looking for google.golang.org/appengine/cloudsql: Cannot detect VCS: [http
 
 ## 5. 更好用的开发工具 - goland
 
-一键搭建自己的 goland lincense server （参考：[https://mengniuge.com/creat-jet-server.html）](https://mengniuge.com/creat-jet-server.html%EF%BC%89)
+一键搭建自己的 goland lincense server （参考：[https://mengniuge.com/creat-jet-server.html](https://mengniuge.com/creat-jet-server.html))
 
 ```powershell
 wget --no-check-certificate -O jetbrains.sh https://mengniuge.com/download/shell/jetbrains.sh && chmod +x jetbrains.sh && bash jetbrains.sh
