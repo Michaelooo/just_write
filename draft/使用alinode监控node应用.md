@@ -108,8 +108,8 @@ alinode 支持钉钉告警，但是目前因为一些不可抗力因素，钉钉
 
 ## 参考资料：
 
-* alinode 5分钟快速入门： https://help.aliyun.com/document_detail/60338.html?spm=a2c4g.11174283.3.1.576830b1WomRkn
-* nodejs 问题排查手册（阿里）： https://github.com/aliyun-node/Node.js-Troubleshooting-Guide
-* nodejs 调试指南： https://github.com/nswbmw/node-in-debugging/blob/master/2.2%20heapdump.md#222-chrome-devtools
-* 朴灵 alinode 普及视频： https://yq.aliyun.com/video/play/333/
-* egg: https://eggjs.org/zh-cn/intro/
+* [alinode 5分钟快速入门](https://help.aliyun.com/document_detail/60338.html?spm=a2c4g.11174283.3.1.576830b1WomRkn)
+* [nodejs 问题排查手册（阿里）](https://github.com/aliyun-node/Node.js-Troubleshooting-Guide)
+* [nodejs 调试指南](https://github.com/nswbmw/node-in-debugging/blob/master/2.2%20heapdump.md#222-chrome-devtools)
+* [朴灵 alinode 普及视频](https://yq.aliyun.com/video/play/333/)
+* [eggjs](https://eggjs.org/zh-cn/intro/)
